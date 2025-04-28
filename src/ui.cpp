@@ -10,12 +10,12 @@ using namespace std;
 namespace ui
 {
     // float fps;
-    sf::Texture texture1("player.png", false, sf::IntRect({0, 0}, {1184, 1184}));
+    sf::Texture texture1("resources/textures/player.png", false, sf::IntRect({0, 0}, {1184, 1184}));
     sf::Sprite uiObj(texture1);
 
-    sf::Texture rectangle1("white.png", false, sf::IntRect({0, 0}, {10, 10}));
-    sf::Texture rectangle2("white.png", false, sf::IntRect({0, 0}, {10, 10}));
-    sf::Texture rectangle3("white.png", false, sf::IntRect({0, 0}, {10, 10}));
+    sf::Texture rectangle1("resources/textures/white.png", false, sf::IntRect({0, 0}, {10, 10}));
+    sf::Texture rectangle2("resources/textures/white.png", false, sf::IntRect({0, 0}, {10, 10}));
+    sf::Texture rectangle3("resources/textures/white.png", false, sf::IntRect({0, 0}, {10, 10}));
     sf::Sprite rectangle1sprite(rectangle1);
     sf::Sprite rectangle2sprite(rectangle2);
     sf::Sprite rectangle3sprite(rectangle3);

@@ -12,9 +12,9 @@ namespace world
     float layer0[10000][3] = {{0,0,1}};
     float layer1[100][3] = {{0, 0, 2}, {0, 1, 2}, {2, 2, 2}, {2, 99, 2}};
     // float layer1[100][3] = {{0, 0, 2}};
-    sf::Texture grass("grass1.png", false, sf::IntRect({0, 0}, {64, 64}));
+    sf::Texture grass("resources/textures/grass1.png", false, sf::IntRect({0, 0}, {64, 64}));
     sf::Sprite grassSprite(grass);
-    sf::Texture tree("tree.png", false, sf::IntRect({0, 0}, {640, 640}));
+    sf::Texture tree("resources/textures/tree.png", false, sf::IntRect({0, 0}, {640, 640}));
     sf::Sprite treeSprite(tree);
     // void generateWorld(sf::RenderWindow &window)
     // {

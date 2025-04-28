@@ -41,7 +41,7 @@ int main()
     window.setFramerateLimit(120);
     window.setVerticalSyncEnabled(true);
 
-    sf::Texture texture("player.png", false, sf::IntRect({0, 0}, {1184, 1184}));
+    sf::Texture texture("resources/textures/player.png", false, sf::IntRect({0, 0}, {1184, 1184}));
     // texture.resize({200, 200});
     texture.setSmooth(true);
     sf::Sprite player(texture);
