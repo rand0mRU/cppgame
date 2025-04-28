@@ -20,7 +20,7 @@ namespace ui
     sf::Sprite rectangle2sprite(rectangle2);
     sf::Sprite rectangle3sprite(rectangle3);
 
-    sf::Font font("jost-light.ttf");
+    sf::Font font("resources/fonts/jost-light.ttf");
     sf::Text fpsText(font);
 
     
