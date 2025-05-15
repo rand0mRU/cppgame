@@ -25,7 +25,8 @@ int main()
     // window.setSize(window.getSize());
 
     ui::init(window);
-    console::init();
+    console _console;
+    _console.init();
     loadbar.setSize({100.0F,20.0F});
     window.draw(loadbar);
     window.display();
@@ -86,7 +87,7 @@ int main()
         }
 
         if (focus) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape) && focus)
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
                 window.close();
 
             if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F1)) lastF1 = false;
@@ -94,6 +95,16 @@ int main()
                 showFPS = !showFPS;
                 lastF1 = true;
             }
+
+            // move world (cam)
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && focus)
+                world::moveTop(0.1F);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && focus)
+                world::moveRight(0.1F);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && focus)
+                world::moveDown(0.1F);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && focus)
+                world::moveLeft(0.1F, player);
         }
         // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
         //     player.move({0.0F, -2.0F});
@@ -104,14 +115,7 @@ int main()
         // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
         //     player.move({2.0F, 0.0F});
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && focus)
-            world::moveTop(0.1F);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && focus)
-            world::moveRight(0.1F);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && focus)
-            world::moveDown(0.1F);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && focus)
-            world::moveLeft(0.1F, player);
+        
 
         window.clear(sf::Color::White);
         world::draw(window);
@@ -122,7 +126,7 @@ int main()
         // window.draw(rectangle3);
 
         ui::uiUpdater(window);
-        console::frame(window);
+        _console.frame(window);
 
         end = std::chrono::high_resolution_clock::now();
         fps = (float)1e9/(float)std::chrono::duration_cast<std::chrono::nanoseconds>(end-start).count();

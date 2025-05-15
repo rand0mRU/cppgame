@@ -3,12 +3,14 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-namespace console
+class console
 {
-    void frame(sf::RenderWindow &window);
-    void hide();
-    void show();
-    void init();
+    public:
+        sf::RenderWindow consoleWindow;
+        void frame(sf::RenderWindow &window);
+        void hide();
+        void show();
+        void init();
 };
 
 #endif // CONSOLE_H
